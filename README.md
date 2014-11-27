@@ -1,16 +1,16 @@
 #[Stanford Slides](https://github.com/SU-SWS/stanford_slides)
-##### Version: 7.x-3.0-alpha3
+##### Version: 7.x-3.0
 
-Maintainers: [jbickar](https://github.com/jbickar), [sherakama](https://github.com/sherakama)   
+Maintainers: [jbickar](https://github.com/jbickar), [sherakama](https://github.com/sherakama)
 [Changelog.txt](CHANGELOG.txt)
 
-This module includes a content type (Stanford Slide) and bulk operations View, incorporating the Stanford Image Field Collection. Stanford Slides are the basic building block for Stanford Carousels. 
+This module includes a content type (Stanford Slide) and bulk operations View, incorporating the Stanford Image Field Collection. Stanford Slides are the basic building block for Stanford Carousels.
 
-* **Slide Block (VBO)**   
+* **Slide Block (VBO)**
 The Slide Block view is an administration view displaying a table of Stanford Slide node information. Administrators can alter the content of multiple slides and/or publish and unpublish slides from this block.
-* **Slides Page (VBO)**   
+* **Slides Page (VBO)**
 The slides page is identical to the Slide block except that it is a page view and can be found at /admin/stanford/slides
-* **Manage Slides Content Page**   
+* **Manage Slides Content Page**
 This contains a view for the stanford_manage feature. It provides a bulk operation view where content authors can make changes to multiple slides in one task.
 
 
