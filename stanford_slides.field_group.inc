@@ -21,12 +21,12 @@ function stanford_slides_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Caption Position',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
-      0 => 'field_s_slide_caption_position_v',
-      1 => 'field_s_slide_caption_position_h',
+      0 => 'field_s_slide_caption_position_h',
+      1 => 'field_s_slide_caption_position_v',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'hidden',
     'format_settings' => array(
       'label' => 'Caption Position',
       'instance_settings' => array(
@@ -51,12 +51,13 @@ function stanford_slides_field_group_info() {
     'label' => 'Slideshow Settings',
     'weight' => '3',
     'children' => array(
-      0 => 'field_s_slide_featured',
-      1 => 'field_s_slide_category',
-      2 => 'field_s_slide_weight',
-      3 => 'field_s_slide_caption_position_v',
-      4 => 'field_s_slide_caption_color',
-      5 => 'field_s_slide_caption_position_h',
+      0 => 'field_s_slide_caption_color',
+      1 => 'field_s_slide_caption_position_h',
+      2 => 'field_s_slide_caption_position_v',
+      3 => 'field_s_slide_category',
+      4 => 'field_s_slide_featured',
+      5 => 'field_s_slide_weight',
+      6 => 'field_s_subsites',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

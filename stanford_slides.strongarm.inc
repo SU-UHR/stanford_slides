@@ -120,6 +120,9 @@ function stanford_slides_strongarm() {
         'redirect' => array(
           'weight' => '4',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
       ),
       'display' => array(),
     ),

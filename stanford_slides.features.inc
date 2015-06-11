@@ -38,5 +38,6 @@ Basically just the image field collection (no body text) with a link, type, and 
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

@@ -86,7 +86,7 @@ function stanford_slides_field_default_field_instances() {
           'delete' => '',
           'description' => 0,
           'edit' => '',
-          'view_mode' => 'stanford_thumbnail',
+          'view_mode' => 'stanford_thumbnail_square',
         ),
         'type' => 'field_collection_view',
         'weight' => 0,
@@ -120,10 +120,9 @@ function stanford_slides_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'stanford_6_col_banner' => array(
         'label' => 'above',
@@ -159,7 +158,7 @@ function stanford_slides_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_s_slide_caption_color',
     'label' => 'Caption Color',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -168,7 +167,7 @@ function stanford_slides_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => 13,
     ),
   );
 
@@ -185,9 +184,8 @@ function stanford_slides_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 8,
       ),
       'stanford_6_col_banner' => array(
@@ -224,7 +222,7 @@ function stanford_slides_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_s_slide_caption_position_h',
     'label' => 'Caption Position - Horizontal',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -233,7 +231,7 @@ function stanford_slides_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 8,
+      'weight' => 14,
     ),
   );
 
@@ -250,9 +248,8 @@ function stanford_slides_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 7,
       ),
       'stanford_6_col_banner' => array(
@@ -289,7 +286,7 @@ function stanford_slides_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_s_slide_caption_position_v',
     'label' => 'Caption Position - Vertical',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -298,7 +295,7 @@ function stanford_slides_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 9,
+      'weight' => 15,
     ),
   );
 
@@ -350,18 +347,16 @@ function stanford_slides_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_s_slide_category',
     'label' => 'Category',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 10,
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 11,
     ),
   );
 
@@ -381,7 +376,7 @@ function stanford_slides_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'stanford_6_col_banner' => array(
         'label' => 'above',
@@ -428,7 +423,7 @@ function stanford_slides_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 12,
+      'weight' => 16,
     ),
   );
 
@@ -482,6 +477,7 @@ function stanford_slides_field_default_field_instances() {
     'label' => 'Link',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => 'more-link',
         'configurable_title' => 0,
@@ -494,6 +490,7 @@ function stanford_slides_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'title' => 'optional',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -575,7 +572,50 @@ function stanford_slides_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 11,
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-stanford_slide-field_s_subsites'
+  $field_instances['node-stanford_slide-field_s_subsites'] = array(
+    'bundle' => 'stanford_slide',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Choose the appropriate subsite tag(s) to determine which subsite page(s) the slide will be added to.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 5,
+      ),
+      'stanford_8_col_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_s_subsites',
+    'label' => 'Subsites',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 10,
     ),
   );
 
@@ -585,10 +625,12 @@ function stanford_slides_field_default_field_instances() {
   t('Caption Position - Horizontal');
   t('Caption Position - Vertical');
   t('Category');
+  t('Choose the appropriate subsite tag(s) to determine which subsite page(s) the slide will be added to.');
   t('Featured');
   t('If this image is part of a group, the weight helps determine the sorting order.  ');
   t('Image');
   t('Link');
+  t('Subsites');
   t('This defines the color scheme used when displaying the caption.');
   t('This field defines vertical alignment for the caption overlay on your slide. Vertical positioning is ignored for caption-block and no-caption views displays.');
   t('This field is used for the horizontal placement of the caption on your slide. This field is ignored for no-caption views displays.');

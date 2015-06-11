@@ -25,7 +25,11 @@ function stanford_slides_views_default_views() {
   $handler->display->display_options['title'] = 'Slides';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -386,6 +390,33 @@ function stanford_slides_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
   $handler->display->display_options['path'] = 'admin/stanford/slides';
+  $translatables['stanford_slides'] = array(
+    t('Master'),
+    t('Slides'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Image Info Field Collection'),
+    t('Content'),
+    t('- Choose an operation -'),
+    t('Image'),
+    t('Title and Caption'),
+    t('Caption'),
+    t('Weight'),
+    t('Featured'),
+    t('Category'),
+    t('Caption Position - Horizontal'),
+    t('Caption Position - Vertical'),
+    t('Caption Color'),
+    t('Link'),
+    t('Edit Slide'),
+    t('Filter by Category'),
+    t('Block'),
+    t('Page'),
+  );
   $export['stanford_slides'] = $view;
 
   $view = new view();
@@ -801,6 +832,50 @@ function stanford_slides_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'menu-manage-content-by-type';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $translatables['stanford_slides_manage'] = array(
+    t('Defaults'),
+    t('Stanford Slides Content'),
+    t('more'),
+    t('Filter'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('term'),
+    t('- Choose an operation -'),
+    t('Change author'),
+    t('Delete'),
+    t('Stick'),
+    t('Unstick'),
+    t('Modify Slides'),
+    t('Promote to front page'),
+    t('Publish'),
+    t('Demote from front page'),
+    t('Unpublish'),
+    t('Image'),
+    t('Title'),
+    t(' New'),
+    t('Last Updated'),
+    t('Published'),
+    t('Slide Categories'),
+    t('Featured'),
+    t('Weight'),
+    t('NID'),
+    t('Actions'),
+    t('[edit_node] |'),
+    t('Edit'),
+    t('[view_node] |'),
+    t(' View'),
+    t(' Delete'),
+    t('Page'),
+  );
   $export['stanford_slides_manage'] = $view;
 
   return $export;
